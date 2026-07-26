@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You Iwata Photography ── 陰翳礼讃 / 四季の移ろい</title>
+<meta name="description" content="写真家 You Iwata の作品集。移ろいゆく日本の四季と、和の文化・伝統。風景・伝統芸能・祭・ポートレート。">
+<link rel="canonical" href="https://youiwata.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="You Iwata Photography ── 陰翳礼讃 / 四季の移ろい">
+<meta property="og:description" content="移ろいゆく日本の四季と、和の文化・伝統を一枚の写真に込めて。">
+<meta property="og:url" content="https://youiwata.com/">
+<meta property="og:image" content="https://youiwata.com/images/hero-w.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/hero-w.webp" imagesrcset="images/hero-s.webp 1100w, images/hero-w.webp 2200w">
+<style>
+:root{--void:#0a0908;--paper:#e8e2d6;--ash:#8d857a;
+--serif:'Cormorant',serif;--mincho:'Shippori Mincho',serif;--sans:'Zen Kaku Gothic New',sans-serif;
+--accent:#cf9b53;--accent-dim:#7a5c34;--wash:rgba(207,155,83,.07);}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--paper);font-family:var(--mincho);-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .9s ease}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--void);color:var(--paper);padding:12px 18px}
+.skip:focus{left:12px;top:12px}
+.atmos{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(120% 85% at 50% 22%,var(--wash),transparent 66%);transition:background 1s ease}
+.bar{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:22px 40px;mix-blend-mode:difference}
+.bar .name{font-family:var(--serif);font-weight:300;font-size:17px;letter-spacing:.34em;text-transform:uppercase;color:#fff;opacity:.85}
+.bar nav{display:flex;gap:30px}
+.bar nav a{font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#fff;opacity:.6;transition:opacity .5s}
+.bar nav a:hover,.bar nav a:focus-visible{opacity:1}
+.seasons{position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;align-items:center;gap:16px}
+.seasons .s-btn{background:none;border:none;cursor:pointer;writing-mode:vertical-rl;font-family:var(--mincho);font-size:15px;letter-spacing:.28em;color:var(--ash);padding:5px 2px;transition:color .6s,letter-spacing .6s;position:relative}
+.seasons .s-btn:hover{color:var(--paper)}
+.seasons .s-btn.on{color:var(--accent);letter-spacing:.5em}
+.seasons .s-btn.on::before{content:"";position:absolute;left:-12px;top:50%;transform:translateY(-50%);width:5px;height:5px;border-radius:50%;background:var(--accent);transition:background .6s}
+.seasons .rule{width:1px;height:30px;background:linear-gradient(var(--ash),transparent);opacity:.35}
+.seasons .s-btn:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+
+/* hero: candle-lit darkness */
+.hero{position:relative;height:100vh;overflow:hidden;z-index:2;cursor:none}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06)}
+.hero .shade{position:absolute;inset:0;z-index:4;background:rgba(5,4,3,.988);
+ -webkit-mask-image:radial-gradient(circle var(--r,190px) at var(--mx,50%) var(--my,58%),transparent 0%,rgba(0,0,0,.18) 42%,rgba(0,0,0,.72) 72%,black 100%);
+ mask-image:radial-gradient(circle var(--r,190px) at var(--mx,50%) var(--my,58%),transparent 0%,rgba(0,0,0,.18) 42%,rgba(0,0,0,.72) 72%,black 100%)}
+.hero .flame{position:absolute;inset:0;z-index:5;pointer-events:none;mix-blend-mode:screen;
+ background:radial-gradient(circle calc(var(--r,190px)*1.25) at var(--mx,50%) var(--my,58%),rgba(255,186,105,.30),rgba(255,140,55,.10) 46%,transparent 72%)}
+.hero .veil{position:absolute;top:9vh;left:0;right:0;z-index:7;text-align:center;pointer-events:none;opacity:0;animation:rise 2.4s .4s ease forwards}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.hero .logo{width:min(38vw,340px);margin:0 auto;height:auto;filter:drop-shadow(0 2px 30px rgba(0,0,0,.9))}
+.hero .tag{margin-top:20px;font-size:13px;letter-spacing:.5em;color:var(--paper);opacity:.8;padding-left:.5em}
+.hero .en{margin-top:9px;font-family:var(--serif);font-style:italic;font-weight:300;font-size:14px;letter-spacing:.18em;color:var(--ash)}
+.hero .hint{position:absolute;bottom:76px;left:50%;transform:translateX(-50%);z-index:7;pointer-events:none;text-align:center;
+ font-family:var(--mincho);font-size:12px;letter-spacing:.4em;color:rgba(232,226,214,.55);padding-left:.4em;opacity:0;animation:hintIn 2s 2s ease forwards}
+.hero .hint .e{display:block;margin-top:8px;font-family:var(--serif);font-style:italic;font-size:11px;letter-spacing:.22em;color:rgba(141,133,122,.8)}
+@keyframes hintIn{to{opacity:1}}
+.hero.lit .hint{animation:hintOut 1.2s ease forwards}
+@keyframes hintOut{to{opacity:0}}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:7;font-family:var(--sans);font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--ash);opacity:0;animation:hintIn 2s 3s ease forwards;pointer-events:none}
+@media(hover:none){.hero{cursor:auto}}
+
+.works{position:relative;z-index:2;padding:18vh 0 4vh}
+.intro{max-width:640px;margin:0 auto 20vh;text-align:center;padding:0 30px}
+.intro .k{font-size:clamp(20px,3vw,30px);line-height:2.3;letter-spacing:.16em;color:var(--paper)}
+.intro .en{margin-top:32px;font-family:var(--serif);font-style:italic;font-weight:300;font-size:17px;letter-spacing:.1em;color:var(--ash);line-height:1.9}
+.chapter{position:relative;padding:12vh 0 6vh}
+.ch-head{position:relative;text-align:center;margin-bottom:11vh;padding:5vh 0}
+.ch-head .ghost{position:absolute;top:50%;left:50%;transform:translate(-50%,calc(-50% + var(--gy,0px)));font-family:var(--mincho);font-weight:600;font-size:clamp(170px,32vw,400px);line-height:1;color:var(--accent);opacity:.055;pointer-events:none;transition:color 1s;user-select:none;will-change:transform}
+.ch-head .en{position:relative;font-family:var(--serif);font-weight:300;font-size:clamp(34px,6vw,64px);letter-spacing:.06em;color:var(--paper)}
+.ch-head .jp{position:relative;margin-top:14px;font-size:13px;letter-spacing:.5em;color:var(--accent);transition:color 1s}
+.ch-head .poem{position:relative;margin-top:20px;font-size:14px;letter-spacing:.24em;color:var(--ash);line-height:2}
+
+.plate{position:relative;margin:0 auto 17vh;width:min(72vw,1000px)}
+.plate.feature{width:min(90vw,1240px)}
+.plate.wideimg{width:min(78vw,1080px)}
+.plate.tall{width:min(50vw,600px)}
+.plate .frame{overflow:hidden;background:#000;position:relative;clip-path:inset(0 100% 0 0);transition:clip-path 1.6s cubic-bezier(.22,1,.32,1)}
+.plate.rev .frame{clip-path:inset(0 0 0 100%)}
+.plate.in .frame{clip-path:inset(0 0 0 0)}
+.plate img{width:100%;height:auto;filter:brightness(.9) contrast(1.02);transform:translateY(var(--py,0)) scale(1.12);will-change:transform;transition:filter 1.2s}
+.plate:hover img{filter:brightness(1.02) contrast(1.03)}
+.pl-glow{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0;transition:opacity .8s;
+ background:radial-gradient(circle 240px at var(--fx,50%) var(--fy,50%),rgba(255,182,100,.26),rgba(255,140,55,.08) 48%,transparent 72%)}
+.plate:hover .pl-glow{opacity:1}
+.plate .cap{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;padding:0 2px;opacity:0;transform:translateY(12px);transition:opacity 1s .5s,transform 1s .5s}
+.plate.in .cap{opacity:1;transform:none}
+.plate .cap .t{font-family:var(--serif);font-weight:300;font-size:22px;letter-spacing:.14em;color:var(--paper);position:relative}
+.plate .cap .t::after{content:"";position:absolute;left:0;bottom:-8px;height:1px;width:0;background:var(--accent);transition:width .8s ease}
+.plate:hover .cap .t::after{width:100%}
+.plate .cap .t .jp{font-family:var(--mincho);font-size:13px;letter-spacing:.3em;color:var(--ash);margin-left:14px}
+.plate .cap .s{font-family:var(--sans);font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);opacity:.85;transition:color 1s}
+.num{position:absolute;top:-8px;left:-46px;font-family:var(--serif);font-style:italic;font-size:14px;color:var(--accent-dim);letter-spacing:.06em;opacity:0;transition:opacity 1s .3s,color 1s}
+.plate.in .num{opacity:1}
+
+.about{position:relative;z-index:2;max-width:1100px;margin:14vh auto 0;padding:0 6vw;display:grid;grid-template-columns:.85fr 1.15fr;gap:6vw;align-items:center}
+.about .pic{position:relative;overflow:hidden;background:#000;clip-path:inset(0 100% 0 0);transition:clip-path 1.6s cubic-bezier(.22,1,.32,1)}
+.about.in .pic{clip-path:inset(0 0 0 0)}
+.about .pic img{width:100%;height:auto;filter:brightness(.88) contrast(1.02);transition:filter 1.2s}
+.about:hover .pic img{filter:brightness(1) contrast(1.03)}
+.about .txt{opacity:0;transform:translateY(16px);transition:opacity 1.2s .3s,transform 1.2s .3s}
+.about.in .txt{opacity:1;transform:none}
+.about .eyebrow{font-family:var(--sans);font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--accent);transition:color 1s}
+.about h2{margin-top:16px;font-family:var(--serif);font-weight:300;font-size:clamp(30px,5vw,52px);letter-spacing:.06em;color:var(--paper)}
+.about h2 .jp{display:block;margin-top:12px;font-family:var(--mincho);font-size:13px;letter-spacing:.5em;color:var(--ash)}
+.about p{margin-top:28px;font-size:15px;line-height:2.3;letter-spacing:.14em;color:rgba(232,226,214,.86)}
+.about .en{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.95;letter-spacing:.06em;color:var(--ash)}
+.about .facts{margin-top:34px;border-top:1px solid rgba(141,133,122,.18)}
+.about .facts div{display:flex;gap:24px;padding:14px 0;border-bottom:1px solid rgba(141,133,122,.12)}
+.about .facts dt{flex:0 0 92px;font-family:var(--sans);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);padding-top:3px}
+.about .facts dd{font-size:14px;letter-spacing:.14em;line-height:1.9;color:rgba(232,226,214,.9)}
+
+.contact{position:relative;z-index:2;max-width:820px;margin:16vh auto 0;padding:0 6vw;text-align:center;opacity:0;transform:translateY(20px);transition:opacity 1.2s,transform 1.2s}
+.contact.in{opacity:1;transform:none}
+.contact .eyebrow{font-family:var(--sans);font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--accent);transition:color 1s}
+.contact h2{margin-top:16px;font-family:var(--serif);font-weight:300;font-size:clamp(30px,5vw,52px);letter-spacing:.06em}
+.contact h2 .jp{display:block;margin-top:12px;font-family:var(--mincho);font-size:13px;letter-spacing:.5em;color:var(--ash)}
+.contact p{margin-top:26px;font-size:14px;line-height:2.2;letter-spacing:.16em;color:rgba(232,226,214,.8)}
+.contact .mail{display:inline-block;margin-top:34px;font-family:var(--serif);font-size:clamp(20px,3vw,28px);letter-spacing:.14em;color:var(--paper);position:relative;padding-bottom:10px}
+.contact .mail::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--accent);transform:scaleX(.25);transform-origin:left;transition:transform .9s ease}
+.contact .mail:hover::after{transform:scaleX(1)}
+.contact .sns{margin-top:40px;display:flex;gap:28px;justify-content:center;flex-wrap:wrap}
+.contact .sns a{font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);transition:color .5s}
+.contact .sns a:hover{color:var(--accent)}
+
+footer{position:relative;z-index:2;border-top:1px solid rgba(141,133,122,.14);padding:70px 40px 60px;text-align:center;margin-top:16vh}
+footer .fl{width:200px;height:auto;margin:0 auto 32px;opacity:.7}
+footer .links{display:flex;gap:30px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+footer .links a{font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);transition:color .5s}
+footer .links a:hover{color:var(--accent)}
+footer .cr{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--accent-dim);letter-spacing:.1em;transition:color 1s}
+@media(max-width:820px){.about{grid-template-columns:1fr;gap:40px}}
+@media(max-width:760px){.seasons{right:10px;gap:12px}.seasons .s-btn{font-size:12px}
+ .plate,.plate.feature,.plate.wideimg,.plate.tall{width:88vw}.num{left:0;top:-28px}
+ .hero .logo{width:min(60vw,300px)}}
+@media(max-width:640px){.bar{padding:18px}.bar nav{gap:16px}}
+@media(prefers-reduced-motion:reduce){
+ *{animation:none!important}
+ .hero{cursor:auto}.hero .shade,.hero .flame{display:none}
+ .hero .veil,.hero .hint,.scrollcue{opacity:1}
+ .plate .frame,.about .pic{clip-path:none!important;transition:none}
+ .plate .cap,.num,.about .txt,.contact{opacity:1;transform:none}
+ .plate img{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#works">本文へスキップ</a>
+<div class="atmos"></div>
+
+<header class="bar">
+  <a class="name" href="#">You Iwata</a>
+  <nav><a href="#works">Works</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</header>
+
+<aside class="seasons"><button class="s-btn" data-s="haru" data-target="haru" aria-label="Spring">春</button><button class="s-btn" data-s="natsu" data-target="natsu" aria-label="Summer">夏</button><button class="s-btn" data-s="aki" data-target="aki" aria-label="Autumn">秋</button><button class="s-btn" data-s="fuyu" data-target="fuyu" aria-label="Winter">冬</button><button class="s-btn" data-s="matsuri" data-target="matsuri" aria-label="Festival">祭</button><button class="s-btn" data-s="sekai" data-target="sekai" aria-label="Journey">世</button><button class="s-btn" data-s="hito" data-target="hito" aria-label="Portrait">人</button><span class="rule"></span></aside>
+
+<section class="hero" id="hero" data-s="none">
+  <div class="bg"><img src="images/hero-w.webp" srcset="images/hero-s.webp 1100w, images/hero-w.webp 2200w" sizes="100vw" width="2200" height="1467" alt="灯り一つの座敷" fetchpriority="high"></div>
+  <div class="shade"></div>
+  <div class="flame"></div>
+  <div class="veil">
+    <img class="logo" src="images/logo.webp" width="800" height="303" alt="You Iwata Photography">
+    <div class="tag">陰 翳 礼 讃</div>
+    <div class="en">in praise of shadows</div>
+  </div>
+  <div class="hint">灯 り を か ざ し て く だ さ い<span class="e">move your light through the dark</span></div>
+  <div class="scrollcue">Scroll ↓</div>
+</section>
+
+<main class="works" id="works">
+  <div class="intro">
+    <p class="k">光は、翳りがあってこそ<br>その姿をあらわす。</p>
+    <p class="en">Through the four seasons of Japan and beyond ──<br>photographs made in the space between light and shadow.</p>
+  </div>
+  <section class="chapter" id="haru" data-s="haru"><div class="ch-head"><span class="ghost" aria-hidden="true">春</span><h2 class="en">Spring</h2><div class="jp">春 ── 芽吹きのひかり</div><div class="poem">やがて来る光の、その最初のひとひら。</div></div><article class="plate feature"><span class="num">春 / 01</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/haru-01-w.webp" srcset="images/haru-01-s.webp 800w, images/haru-01-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Weeping Cherry — 枝垂れ"><span class="pl-glow"></span></div><div class="cap"><div class="t">Weeping Cherry<span class="jp">枝垂れ</span></div><div class="s">風景</div></div></article><article class="plate tall"><span class="num">春 / 02</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/haru-02-w.webp" srcset="images/haru-02-s.webp 640w, images/haru-02-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Blossom Light — 花明り"><span class="pl-glow"></span></div><div class="cap"><div class="t">Blossom Light<span class="jp">花明り</span></div><div class="s">陰翳</div></div></article><article class="plate wideimg"><span class="num">春 / 03</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/haru-03-w.webp" srcset="images/haru-03-s.webp 800w, images/haru-03-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Wisteria Hall — 藤の間"><span class="pl-glow"></span></div><div class="cap"><div class="t">Wisteria Hall<span class="jp">藤の間</span></div><div class="s">陰翳</div></div></article><article class="plate tall"><span class="num">春 / 04</span><div class="frame"><img loading="lazy" decoding="async" width="1066" height="1600" src="images/haru-04-w.webp" srcset="images/haru-04-s.webp 533w, images/haru-04-w.webp 1066w" sizes="(max-width:760px) 88vw, 78vw" alt="White-eye — 目白"><span class="pl-glow"></span></div><div class="cap"><div class="t">White-eye<span class="jp">目白</span></div><div class="s">風景</div></div></article><article class="plate wideimg"><span class="num">春 / 05</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1067" src="images/haru-05-w.webp" srcset="images/haru-05-s.webp 800w, images/haru-05-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Pagoda Light — 塔影"><span class="pl-glow"></span></div><div class="cap"><div class="t">Pagoda Light<span class="jp">塔影</span></div><div class="s">風景</div></div></article><article class="plate tall"><span class="num">春 / 06</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/haru-06-w.webp" srcset="images/haru-06-s.webp 640w, images/haru-06-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Blossom Torii — 花鳥居"><span class="pl-glow"></span></div><div class="cap"><div class="t">Blossom Torii<span class="jp">花鳥居</span></div><div class="s">風景</div></div></article></section><section class="chapter" id="natsu" data-s="natsu"><div class="ch-head"><span class="ghost" aria-hidden="true">夏</span><h2 class="en">Summer</h2><div class="jp">夏 ── 深き緑の翳</div><div class="poem">濃い影ほど、光を強く抱いている。</div></div><article class="plate feature"><span class="num">夏 / 01</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/natsu-01-w.webp" srcset="images/natsu-01-s.webp 640w, images/natsu-01-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Crimson Corridor — 紅の廊下"><span class="pl-glow"></span></div><div class="cap"><div class="t">Crimson Corridor<span class="jp">紅の廊下</span></div><div class="s">陰翳</div></div></article><article class="plate tall"><span class="num">夏 / 02</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/natsu-02-w.webp" srcset="images/natsu-02-s.webp 640w, images/natsu-02-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Chamber of Green — 青の間"><span class="pl-glow"></span></div><div class="cap"><div class="t">Chamber of Green<span class="jp">青の間</span></div><div class="s">陰翳</div></div></article><article class="plate tall"><span class="num">夏 / 03</span><div class="frame"><img loading="lazy" decoding="async" width="1067" height="1600" src="images/natsu-03-w.webp" srcset="images/natsu-03-s.webp 534w, images/natsu-03-w.webp 1067w" sizes="(max-width:760px) 88vw, 78vw" alt="Fireflies — 蛍火"><span class="pl-glow"></span></div><div class="cap"><div class="t">Fireflies<span class="jp">蛍火</span></div><div class="s">陰翳</div></div></article><article class="plate tall"><span class="num">夏 / 04</span><div class="frame"><img loading="lazy" decoding="async" width="1334" height="1600" src="images/natsu-04-w.webp" srcset="images/natsu-04-s.webp 667w, images/natsu-04-w.webp 1334w" sizes="(max-width:760px) 88vw, 78vw" alt="Oirase Stream — 奥入瀬"><span class="pl-glow"></span></div><div class="cap"><div class="t">Oirase Stream<span class="jp">奥入瀬</span></div><div class="s">風景</div></div></article><article class="plate tall"><span class="num">夏 / 05</span><div class="frame"><img loading="lazy" decoding="async" width="1067" height="1600" src="images/natsu-05-w.webp" srcset="images/natsu-05-s.webp 534w, images/natsu-05-w.webp 1067w" sizes="(max-width:760px) 88vw, 78vw" alt="Green Bamboo — 青竹"><span class="pl-glow"></span></div><div class="cap"><div class="t">Green Bamboo<span class="jp">青竹</span></div><div class="s">風景</div></div></article><article class="plate wideimg"><span class="num">夏 / 06</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1067" src="images/natsu-06-w.webp" srcset="images/natsu-06-s.webp 800w, images/natsu-06-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Milky Way — 天の川"><span class="pl-glow"></span></div><div class="cap"><div class="t">Milky Way<span class="jp">天の川</span></div><div class="s">風景</div></div></article></section><section class="chapter" id="aki" data-s="aki"><div class="ch-head"><span class="ghost" aria-hidden="true">秋</span><h2 class="en">Autumn</h2><div class="jp">秋 ── 翳りの静けさ</div><div class="poem">灯り一つが、闇のすべてを照らす。</div></div><article class="plate feature"><span class="num">秋 / 01</span><div class="frame"><img loading="lazy" decoding="async" width="1088" height="1600" src="images/aki-01-w.webp" srcset="images/aki-01-s.webp 544w, images/aki-01-w.webp 1088w" sizes="(max-width:760px) 88vw, 78vw" alt="Falling Leaves — 散りゆく"><span class="pl-glow"></span></div><div class="cap"><div class="t">Falling Leaves<span class="jp">散りゆく</span></div><div class="s">風景</div></div></article><article class="plate wideimg"><span class="num">秋 / 02</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/aki-02-w.webp" srcset="images/aki-02-s.webp 800w, images/aki-02-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="A Single Light — 一灯"><span class="pl-glow"></span></div><div class="cap"><div class="t">A Single Light<span class="jp">一灯</span></div><div class="s">陰翳</div></div></article><article class="plate wideimg"><span class="num">秋 / 03</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/aki-03-w.webp" srcset="images/aki-03-s.webp 800w, images/aki-03-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Framed Autumn — 額の秋"><span class="pl-glow"></span></div><div class="cap"><div class="t">Framed Autumn<span class="jp">額の秋</span></div><div class="s">陰翳</div></div></article><article class="plate wideimg"><span class="num">秋 / 04</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/aki-04-w.webp" srcset="images/aki-04-s.webp 800w, images/aki-04-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Mountain Gate — 山門"><span class="pl-glow"></span></div><div class="cap"><div class="t">Mountain Gate<span class="jp">山門</span></div><div class="s">風景</div></div></article><article class="plate tall"><span class="num">秋 / 05</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/aki-05-w.webp" srcset="images/aki-05-s.webp 640w, images/aki-05-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="One Leaf — 一葉"><span class="pl-glow"></span></div><div class="cap"><div class="t">One Leaf<span class="jp">一葉</span></div><div class="s">風景</div></div></article></section><section class="chapter" id="fuyu" data-s="fuyu"><div class="ch-head"><span class="ghost" aria-hidden="true">冬</span><h2 class="en">Winter</h2><div class="jp">冬 ── 静寂の白</div><div class="poem">音のない白のなかに、次の春がねむる。</div></div><article class="plate feature"><span class="num">冬 / 01</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/fuyu-01-w.webp" srcset="images/fuyu-01-s.webp 640w, images/fuyu-01-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Golden Pavilion in Snow — 雪の金閣"><span class="pl-glow"></span></div><div class="cap"><div class="t">Golden Pavilion in Snow<span class="jp">雪の金閣</span></div><div class="s">風景</div></div></article><article class="plate wideimg"><span class="num">冬 / 02</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1334" src="images/fuyu-02-w.webp" srcset="images/fuyu-02-s.webp 800w, images/fuyu-02-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Wedded Rocks — 夫婦岩"><span class="pl-glow"></span></div><div class="cap"><div class="t">Wedded Rocks<span class="jp">夫婦岩</span></div><div class="s">風景</div></div></article><article class="plate wideimg"><span class="num">冬 / 03</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1067" src="images/fuyu-03-w.webp" srcset="images/fuyu-03-s.webp 800w, images/fuyu-03-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Snowbound Bamboo — 雪の回廊"><span class="pl-glow"></span></div><div class="cap"><div class="t">Snowbound Bamboo<span class="jp">雪の回廊</span></div><div class="s">風景</div></div></article><article class="plate wideimg"><span class="num">冬 / 04</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="900" src="images/fuyu-04-w.webp" srcset="images/fuyu-04-s.webp 800w, images/fuyu-04-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Snow-Viewing Room — 雪見の間"><span class="pl-glow"></span></div><div class="cap"><div class="t">Snow-Viewing Room<span class="jp">雪見の間</span></div><div class="s">陰翳</div></div></article><article class="plate wideimg"><span class="num">冬 / 05</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1067" src="images/fuyu-05-w.webp" srcset="images/fuyu-05-s.webp 800w, images/fuyu-05-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Tea by the Snow Window — 雪窓の茶"><span class="pl-glow"></span></div><div class="cap"><div class="t">Tea by the Snow Window<span class="jp">雪窓の茶</span></div><div class="s">陰翳</div></div></article></section><section class="chapter" id="matsuri" data-s="matsuri"><div class="ch-head"><span class="ghost" aria-hidden="true">祭</span><h2 class="en">Festival</h2><div class="jp">祭 ── 火と祈り</div><div class="poem">闇が深いほど、火は生きて舞う。</div></div><article class="plate feature"><span class="num">祭 / 01</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/matsuri-01-w.webp" srcset="images/matsuri-01-s.webp 640w, images/matsuri-01-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Sparks — 火の粉"><span class="pl-glow"></span></div><div class="cap"><div class="t">Sparks<span class="jp">火の粉</span></div><div class="s">伝統芸能</div></div></article><article class="plate wideimg"><span class="num">祭 / 02</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/matsuri-02-w.webp" srcset="images/matsuri-02-s.webp 800w, images/matsuri-02-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Sacred Fire — 浄火"><span class="pl-glow"></span></div><div class="cap"><div class="t">Sacred Fire<span class="jp">浄火</span></div><div class="s">祭</div></div></article><article class="plate tall"><span class="num">祭 / 03</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/matsuri-03-w.webp" srcset="images/matsuri-03-s.webp 640w, images/matsuri-03-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Kaze-no-Bon — 風の盆"><span class="pl-glow"></span></div><div class="cap"><div class="t">Kaze-no-Bon<span class="jp">風の盆</span></div><div class="s">伝統芸能</div></div></article><article class="plate tall"><span class="num">祭 / 04</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/matsuri-04-w.webp" srcset="images/matsuri-04-s.webp 640w, images/matsuri-04-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Mikoshi — 神輿"><span class="pl-glow"></span></div><div class="cap"><div class="t">Mikoshi<span class="jp">神輿</span></div><div class="s">祭</div></div></article><article class="plate tall"><span class="num">祭 / 05</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/matsuri-05-w.webp" srcset="images/matsuri-05-s.webp 640w, images/matsuri-05-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Offering — 奉納"><span class="pl-glow"></span></div><div class="cap"><div class="t">Offering<span class="jp">奉納</span></div><div class="s">伝統芸能</div></div></article></section><section class="chapter" id="sekai" data-s="sekai"><div class="ch-head"><span class="ghost" aria-hidden="true">旅</span><h2 class="en">Journey</h2><div class="jp">世界 ── 旅の途上</div><div class="poem">遠い異国にも、同じ灯がともる。</div></div><article class="plate feature"><span class="num">世 / 01</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1067" src="images/sekai-01-w.webp" srcset="images/sekai-01-s.webp 800w, images/sekai-01-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Sky Lanterns — 天燈"><span class="pl-glow"></span></div><div class="cap"><div class="t">Sky Lanterns<span class="jp">天燈</span></div><div class="s">世界</div></div></article><article class="plate wideimg"><span class="num">世 / 02</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/sekai-02-w.webp" srcset="images/sekai-02-s.webp 800w, images/sekai-02-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Jiufen Dusk — 九份の宵"><span class="pl-glow"></span></div><div class="cap"><div class="t">Jiufen Dusk<span class="jp">九份の宵</span></div><div class="s">世界</div></div></article><article class="plate wideimg"><span class="num">世 / 03</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1067" src="images/sekai-03-w.webp" srcset="images/sekai-03-s.webp 800w, images/sekai-03-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="White Temple — 白の寺"><span class="pl-glow"></span></div><div class="cap"><div class="t">White Temple<span class="jp">白の寺</span></div><div class="s">世界</div></div></article><article class="plate tall"><span class="num">世 / 04</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/sekai-04-w.webp" srcset="images/sekai-04-s.webp 640w, images/sekai-04-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Temple Guardian — 守り神"><span class="pl-glow"></span></div><div class="cap"><div class="t">Temple Guardian<span class="jp">守り神</span></div><div class="s">世界</div></div></article><article class="plate tall"><span class="num">世 / 05</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/sekai-05-w.webp" srcset="images/sekai-05-s.webp 640w, images/sekai-05-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Hall of Light — 金堂の光"><span class="pl-glow"></span></div><div class="cap"><div class="t">Hall of Light<span class="jp">金堂の光</span></div><div class="s">世界</div></div></article><article class="plate tall"><span class="num">世 / 06</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/sekai-06-w.webp" srcset="images/sekai-06-s.webp 640w, images/sekai-06-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Lights of Prayer — 祈りの灯"><span class="pl-glow"></span></div><div class="cap"><div class="t">Lights of Prayer<span class="jp">祈りの灯</span></div><div class="s">世界</div></div></article></section><section class="chapter" id="hito" data-s="hito"><div class="ch-head"><span class="ghost" aria-hidden="true">人</span><h2 class="en">Portrait</h2><div class="jp">人 ── 面影</div><div class="poem">一瞬のまなざしに、時が宿る。</div></div><article class="plate feature"><span class="num">人 / 01</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/hito-01-w.webp" srcset="images/hito-01-s.webp 800w, images/hito-01-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Ink & Silk — 墨のあわい"><span class="pl-glow"></span></div><div class="cap"><div class="t">Ink & Silk<span class="jp">墨のあわい</span></div><div class="s">ポートレート</div></div></article><article class="plate wideimg"><span class="num">人 / 02</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/hito-02-w.webp" srcset="images/hito-02-s.webp 800w, images/hito-02-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="By the Shoji — 障子の光"><span class="pl-glow"></span></div><div class="cap"><div class="t">By the Shoji<span class="jp">障子の光</span></div><div class="s">ポートレート</div></div></article><article class="plate tall"><span class="num">人 / 03</span><div class="frame"><img loading="lazy" decoding="async" width="1066" height="1600" src="images/hito-03-w.webp" srcset="images/hito-03-s.webp 533w, images/hito-03-w.webp 1066w" sizes="(max-width:760px) 88vw, 78vw" alt="The Dance — 舞"><span class="pl-glow"></span></div><div class="cap"><div class="t">The Dance<span class="jp">舞</span></div><div class="s">ポートレート</div></div></article><article class="plate wideimg"><span class="num">人 / 04</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/hito-04-w.webp" srcset="images/hito-04-s.webp 800w, images/hito-04-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Fox Mask — 狐面"><span class="pl-glow"></span></div><div class="cap"><div class="t">Fox Mask<span class="jp">狐面</span></div><div class="s">ポートレート</div></div></article><article class="plate tall"><span class="num">人 / 05</span><div class="frame"><img loading="lazy" decoding="async" width="1280" height="1600" src="images/hito-05-w.webp" srcset="images/hito-05-s.webp 640w, images/hito-05-w.webp 1280w" sizes="(max-width:760px) 88vw, 78vw" alt="Festival Night — 宵の縁日"><span class="pl-glow"></span></div><div class="cap"><div class="t">Festival Night<span class="jp">宵の縁日</span></div><div class="s">ポートレート</div></div></article><article class="plate wideimg"><span class="num">人 / 06</span><div class="frame"><img loading="lazy" decoding="async" width="1600" height="1066" src="images/hito-06-w.webp" srcset="images/hito-06-s.webp 800w, images/hito-06-w.webp 1600w" sizes="(max-width:760px) 88vw, 78vw" alt="Field of Flowers — 花野"><span class="pl-glow"></span></div><div class="cap"><div class="t">Field of Flowers<span class="jp">花野</span></div><div class="s">ポートレート</div></div></article></section>
+</main>
+
+<section class="about" id="about" data-s="none">
+  <div class="pic"><img loading="lazy" decoding="async" src="images/about-w.webp" srcset="images/about-s.webp 700w, images/about-w.webp 1400w" sizes="(max-width:820px) 88vw, 38vw" width="1400" height="933" alt="You Iwata"></div>
+  <div class="txt">
+    <div class="eyebrow">About</div>
+    <h2>You Iwata<span class="jp">岩 田 悠</span></h2>
+    <p>移ろいゆく日本の四季の情景と、和の文化・伝統を、一枚の写真に込める。<br>
+    とりわけ京都を中心に作品を重ね、写真展やSNSを通じて発表を続けています。<br>
+    全国各地でのトークショーや、写真技術・表現に関する講演も行っています。</p>
+    <p class="en">A photographer working between light and shadow ──<br>
+    capturing the turning seasons of Japan and the quiet of its traditions.</p>
+    <dl class="facts">
+      <div><dt>Genre</dt><dd>風景 ／ 伝統芸能 ／ 祭 ／ ポートレート</dd></div>
+      <div><dt>Theme</dt><dd>陰翳礼讃 ／ 四季の移ろい</dd></div>
+      <div><dt>Based</dt><dd>Japan ── 京都を中心に</dd></div>
+      <div><dt>Activity</dt><dd>写真展 ／ トークショー ／ 講演 ／ 作品発表</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="contact" id="contact" data-s="none">
+  <div class="eyebrow">Contact</div>
+  <h2>Get in Touch<span class="jp">お 問 い 合 わ せ</span></h2>
+  <p>撮影のご依頼、作品のご購入、講演・執筆のご相談など<br>お気軽にご連絡ください。</p>
+  <a class="mail" href="mailto:info@youiwata.com">info@youiwata.com</a>
+  <div class="sns">
+    <a href="https://www.instagram.com/you.iwata/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/you.iwata.7" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://twitter.com/You_Iwata_" target="_blank" rel="noopener">X / Twitter</a>
+  </div>
+</section>
+
+<footer>
+  <img class="fl" src="images/logo.webp" width="800" height="303" loading="lazy" alt="You Iwata Photography">
+  <div class="links">
+    <a href="https://www.instagram.com/you.iwata/" target="_blank" rel="noopener">Instagram</a>
+    <a href="#works">Works</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </div>
+  <div class="cr">© You Iwata — youiwata.com</div>
+</footer>
+
+<script>
+const themes={none:{accent:'#cf9b53',dim:'#7a5c34',wash:'rgba(207,155,83,.07)'},haru:{accent:'#d98fa4',dim:'#7d5560',wash:'rgba(217,143,164,.08)'},natsu:{accent:'#6f9a5f',dim:'#46613c',wash:'rgba(111,154,95,.08)'},aki:{accent:'#c67f3f',dim:'#754c26',wash:'rgba(198,127,63,.08)'},fuyu:{accent:'#8ba0b2',dim:'#55636e',wash:'rgba(139,160,178,.08)'},matsuri:{accent:'#cf6f3a',dim:'#7a3d20',wash:'rgba(207,111,58,.08)'},sekai:{accent:'#d0a24f',dim:'#7a5e2c',wash:'rgba(208,162,79,.08)'},hito:{accent:'#bd7d84',dim:'#6e484d',wash:'rgba(189,125,132,.08)'}};
+const rs=document.documentElement.style;let current='none';
+function apply(s){if(s===current)return;current=s;const t=themes[s];
+ rs.setProperty('--accent',t.accent);rs.setProperty('--accent-dim',t.dim);rs.setProperty('--wash',t.wash);
+ document.querySelectorAll('.s-btn').forEach(b=>b.classList.toggle('on',b.dataset.s===s));}
+const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)apply(e.target.dataset.s);}),{rootMargin:'-45% 0px -45% 0px'});
+document.querySelectorAll('[data-s]').forEach(el=>spy.observe(el));
+document.querySelectorAll('.s-btn').forEach(b=>b.addEventListener('click',()=>{const el=document.getElementById(b.dataset.target);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}));
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const hero=document.getElementById('hero');
+if(hero && !reduce){
+  const hs=hero.style;
+  let tx=innerWidth*.5, ty=innerHeight*.58, cx=tx, cy=ty, touched=false, t0=performance.now();
+  function onMove(x,y){touched=true;hero.classList.add('lit');tx=x;ty=y;}
+  hero.addEventListener('pointermove',e=>onMove(e.clientX,e.clientY));
+  hero.addEventListener('touchmove',e=>{const t=e.touches[0];onMove(t.clientX,t.clientY);},{passive:true});
+  hero.addEventListener('touchstart',e=>{const t=e.touches[0];onMove(t.clientX,t.clientY);},{passive:true});
+  (function loop(now){
+    const t=(now-t0)/1000;
+    if(!touched){tx=innerWidth*(.5+.16*Math.sin(t*.5));ty=innerHeight*(.55+.09*Math.sin(t*.33+1.7));}
+    cx+=(tx-cx)*.09; cy+=(ty-cy)*.09;
+    const flick=1+.05*Math.sin(t*9)+.035*Math.sin(t*23.7)+.02*Math.sin(t*57.3);
+    const r=(Math.min(innerWidth,innerHeight)*.24)*flick;
+    hs.setProperty('--mx',cx+'px');hs.setProperty('--my',cy+'px');hs.setProperty('--r',r+'px');
+    requestAnimationFrame(loop);
+  })(t0);
+}
+
+document.querySelectorAll('.about,.contact').forEach(el=>{
+  new IntersectionObserver((es,ob)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ob.unobserve(e.target);}}),{threshold:.2}).observe(el);
+});
+
+const plates=[...document.querySelectorAll('.plate')];
+plates.forEach((p,i)=>{if(i%2)p.classList.add('rev');});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:.15});
+plates.forEach(p=>io.observe(p));
+
+if(!reduce){
+  const ghosts=[...document.querySelectorAll('.ch-head .ghost')];
+  let ticking=false;
+  function parallax(){
+    ticking=false;const vh=innerHeight;
+    plates.forEach(p=>{const r=p.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;
+      const prog=(r.top+r.height/2-vh/2)/(vh/2+r.height/2);
+      p.querySelector('img').style.setProperty('--py',(prog*-4.5)+'%');});
+    ghosts.forEach(g=>{const r=g.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;
+      const prog=(r.top+r.height/2-vh/2)/vh;g.style.setProperty('--gy',(prog*60)+'px');});
+  }
+  addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(parallax);}},{passive:true});
+  parallax();
+}
+
+document.querySelectorAll('.plate .frame').forEach(f=>{
+  f.addEventListener('pointermove',e=>{
+    const r=f.getBoundingClientRect(),g=f.querySelector('.pl-glow');
+    g.style.setProperty('--fx',((e.clientX-r.left)/r.width*100)+'%');
+    g.style.setProperty('--fy',((e.clientY-r.top)/r.height*100)+'%');
+  });
+});
+</script>
+</body>
+</html>
